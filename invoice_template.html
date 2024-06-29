@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        /* Define your CSS styles for the invoice layout */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .invoice {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .invoice-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .invoice-body {
+            margin-bottom: 20px;
+        }
+        .invoice-footer {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice">
+        <div class="invoice-header">
+            <img src="{{ companyLogoUrl }}" alt="Company Logo" style="max-width: 200px;">
+            <h1>Invoice {{ invoiceNo }}</h1>
+        </div>
+        <div class="invoice-body">
+            <div>
+                <h2>Order Details</h2>
+                <p><strong>Order No:</strong> {{ orderNo }}</p>
+                <p><strong>Order Date:</strong> {{ orderDate }}</p>
+            </div>
+            <div>
+                <h2>Invoice Details</h2>
+                <p><strong>Invoice No:</strong> {{ invoiceNo }}</p>
+                <p><strong>Invoice Date:</strong> {{ invoiceDate }}</p>
+            </div>
+            <div>
+                <h2>Seller Details</h2>
+                <p><strong>Name:</strong> {{ sellerName }}</p>
+                <p><strong>Address:</strong> {{ sellerAddress }}</p>
+                <p><strong>PAN No.:</strong> {{ sellerPAN }}</p>
+                <p><strong>GST Registration No.:</strong> {{ sellerGST }}</p>
+            </div>
+            <div>
+                <h2>Buyer Details</h2>
+                <p><strong>Name:</strong> {{ buyerName }}</p>
+                <p><strong>Address:</strong> {{ buyerAddress }}</p>
+            </div>
+            <div>
+                <h2>Shipping Details</h2>
+                <p><strong>Name:</strong> {{ shippingName }}</p>
+                <p><strong>Address:</strong> {{ shippingAddress }}</p>
+            </div>
+            <div>
+                <h2>Order Items</h2>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Unit Price</th>
+                            <th>Quantity</th>
+                            <th>Discount</th>
+                            <th>Net Amount</th>
+                            <th>Tax Rate (%)</th>
+                            <th>Tax Amount</th>
+                            <th>Total Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each orderItems}}
+                        <tr>
+                            <td>{{ description }}</td>
+                            <td>{{ unitPrice }}</td>
+                            <td>{{ quantity }}</td>
+                            <td>{{ discount }}</td>
+                            <td>{{ netAmount }}</td>
+                            <td>{{ taxRate }}</td>
+                            <td>{{ taxAmount }}</td>
+                            <td>{{ totalAmount }}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="invoice-footer">
+            <p><strong>Total Amount:</strong> {{ totalAmount }}</p>
+            <p>Amount in Words: {{ amountInWords }}</p>
+        </div>
+    </div>
+</body>
+</html>
