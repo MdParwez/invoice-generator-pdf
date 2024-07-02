@@ -1,6 +1,6 @@
 # Invoice Generator
 
-This is a web application built with Node.js and Express that generates PDF invoices based on user input. It uses EJS templates to render invoice details and HTML-PDF module to convert HTML to PDF format.
+This is a web application built with Node.js and Express that generates PDF invoices based on user input. It uses EJS templates to render invoice details and the HTML-PDF module to convert HTML to PDF format.
 
 ## Features
 
@@ -10,14 +10,17 @@ This is a web application built with Node.js and Express that generates PDF invo
 - **Customizable**: Easily customizable HTML templates to match different invoice formats.
 - **Scalable**: Designed for scalability to handle a large volume of invoices.
 
-##Usage
--Fill out the invoice details in the provided form.
--Click on "Generate Invoice" to create the invoice PDF.
--The generated PDF will be downloaded automatically.
--Technologies Used
--Node.js
--Express.js
--HTML-PDF
--EJS
--Body-parser
--Validator
+## Usage
+
+1. **Fill out the Invoice Details**: Enter the necessary details in the provided form, including seller information, buyer information, and itemized invoice details.
+2. **Generate Invoice**: Click on the "Generate Invoice" button to create the invoice PDF.
+3. **Download PDF**: The generated PDF will be downloaded automatically.
+
+## Technologies Used
+
+- **Node.js**
+- **Express.js**
+- **HTML-PDF**
+- **EJS**
+- **Body-parser**
+- **Validator**
