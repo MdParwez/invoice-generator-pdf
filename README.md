@@ -1,4 +1,4 @@
-# Invoice Generator
+# Invoice Generator Using Node.js
 
 This is a web application built with Node.js and Express that generates PDF invoices based on user input. It uses EJS templates to render invoice details and the HTML-PDF module to convert HTML to PDF format.
 
